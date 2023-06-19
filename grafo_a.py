@@ -68,7 +68,6 @@ def load_graph(movies_by_id, actors_by_movie, actor_names_by_id) -> Graph:
 # Define the paths to the datasets
 
 movies_by_id, actors_by_movie, actor_names_by_id = read_data(MOVIES_DATA_PATH, ACTORS_DATA_PATH, ACTORS_NAMES_PATH)
-print(actors_by_movie)
-# graph = load_graph(movies_by_id, actors_by_movie, actor_names_by_id)
+graph = load_graph(movies_by_id, actors_by_movie, actor_names_by_id)
 # graph.print_graph()
 

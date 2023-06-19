@@ -6,7 +6,7 @@ def max_bacon_num(graph, actor1 = "nm0000102"):
     distance = 0
 
     max_distance = 0
-    max_actor = 0
+    max_actor = None
 
     queue.append((actor1, 0))
 
