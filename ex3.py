@@ -1,7 +1,8 @@
 from grafo_b import *
+from collections import deque
 
 def max_bacon_num(graph, actor1 = "nm0000102"):
-    queue = []
+    queue = deque()
     visited = set()
     distance = 0
 
@@ -11,7 +12,7 @@ def max_bacon_num(graph, actor1 = "nm0000102"):
     queue.append((actor1, 0))
 
     while len(queue) > 0:
-        vertex, distance  = queue.pop(0)
+        vertex, distance  = queue.popleft()
         for neighbour in graph.get_neighbors(vertex):
             if neighbour not in visited:
                 queue.append((neighbour, distance +1))
@@ -22,8 +23,8 @@ def max_bacon_num(graph, actor1 = "nm0000102"):
 
     return int(max_distance/2), max_actor
 
-max_distance, max_actor = max_bacon_num(graph)
-print("Max actor")
-print(max_actor)
-print("Max distance")
-print(max_distance)
+# max_distance, max_actor = max_bacon_num(graph)
+# print("Max actor")
+# print(max_actor)
+# print("Max distance")
+# print(max_distance)

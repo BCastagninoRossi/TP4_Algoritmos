@@ -1,3 +1,5 @@
+import numpy as np
+
 def possible(grid, x, y, n):
     
     """
@@ -58,7 +60,18 @@ def solve(grid):
         grid: El tablero resuelto.
 
     """
-    pass
+    for i in range(9):
+        for j in range(9):
+            if grid[i][j] == 0:
+                for x in range(1, 10):
+                    if possible(grid, i, j, x):
+                        grid[i][j] = x
+                        result = solve(grid) 
+                        if result is not None:  
+                            return result
+                        grid[i][j] = 0  
+                return None  
+    return grid
     
 
 grid = [
@@ -70,6 +83,7 @@ grid = [
 [7, 0, 0, 0, 2, 0, 0, 0, 6],
 [0, 6, 0, 0, 0, 0, 2, 8, 0],
 [0, 0, 0, 4, 1, 9, 0, 0, 5],
-[0, 0, 0, 0, 8, 0, 0, 7, 9]]
+[0, 0, 0, 2, 8, 0, 0, 7, 9]]
 
-solve(grid)
+solved_grid = solve(grid)
+print(np.matrix(solved_grid))

@@ -28,4 +28,4 @@ def mod_dijkstra(graph, vert1, vert2):
 
     return distances[vert2]
 
-print(mod_dijkstra(graph, "nm0000122", "nm0289856"))
+# print(mod_dijkstra(graph, "nm0000122", "nm0289856"))

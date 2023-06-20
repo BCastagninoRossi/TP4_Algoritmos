@@ -25,5 +25,5 @@ def dijkstra(graph, initial_vertex):
 
     return distances
 
-dijkstra_dictionary = dijkstra(graph, "nm0000122")
-print(dijkstra_dictionary["nm0289856"])
+# dijkstra_dictionary = dijkstra(graph, "nm0000122")
+# print(dijkstra_dictionary["nm0289856"])
